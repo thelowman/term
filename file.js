@@ -29,9 +29,9 @@ function goToDir(path) {
   files.forEach(entry => {
     if (entry.isBlockDevice()) term.yellow(entry.name);
     if (entry.isCharacterDevice()) term.magenta(entry.name);
-    if (entry.isDirectory()) term.blue(entry.name);
+    if (entry.isDirectory()) term.blue(`\u{1f4c1}  ${entry.name}`);
     if (entry.isFIFO()) term.cyan(entry.name);
-    if (entry.isFile()) term.white(entry.name);
+    if (entry.isFile()) term.white(`\u{1f5d2}  ${entry.name}`);
     if (entry.isSocket()) term.green(entry.name);
     if (entry.isSymbolicLink()) term.red(entry.name);
     term.nextLine();
